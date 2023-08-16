@@ -1,0 +1,80 @@
+<!DOCTYPE html> <!--define um documento HTML5-->
+<html lang="pt-br" class=""><!--html -> elemento raiz do HTML, com atributo lang-->
+<head> <!--filho head, ajusta configuracoes do documento HTML, nao sao visiveis ao usuario final-->
+    
+    <!--fonts google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!---------------->
+
+    <meta charset="UTF-8"><!--define o conjunto de caracteres que iremos utilizar nessa home, com til, cedilha..-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--define um visual adaptavel e escala de zoom em 1.0-->
+    <title>Web Developer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body><!--parte visivel da pagina-->
+    <div id="container">
+        <div id="profile">
+            <img 
+                src="./assets/assets/avatarPereira.png" 
+                alt="Foto de Pereira trabalhando, usando óculos e blusão azul."
+            />
+            <p>Antonio Pereira</p>
+        </div>
+        <div id="switch" onclick="toggleMode()">
+            <button>
+            </button>
+            <span></span>
+
+        </div>
+
+        <ul> <!--listas-->
+            <li>
+                <a href="#" target="_blank">about</a>
+            </li>
+            <li>
+                <a href="#" target="_blank">portfolio</a>
+            </li>
+            <li>
+                <a href="#" target="_blank">labs</a>
+            </li>
+            <li>
+                <a href="#" target="_blank">contact</a>
+            </li>
+        </ul>
+            
+            <div id="social-medias">
+                <a href="https://github.com/k3L0w" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                </a>
+
+                <a href="https://twitter.com/odrareg2" target="_blank">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+                
+                <a href="linkedin.com/in/antonio-pereira-professional" target="_blank">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+            </div>
+            <footer>
+                Feito com base nas aulas do professor <br> <a href="https://maykbrito.dev/" target="_blank">Mayk Brito</a>
+                 <a href="https://www.rocketseat.com.br/discover"> (Rocketseat)</a>
+            </footer>
+    </div>
+
+    <!--icons installation-->
+    <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
+    </script>
+    <script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
+    </script>
+    <script 
+        src="./script.js">
+    </script>
+
+</body>
+</html>

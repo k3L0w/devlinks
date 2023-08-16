@@ -1,0 +1,192 @@
+/*background para o mobile */
+
+/*reset margin*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*medida das caixas, mantém a largura pré-definida com width */
+}
+
+/* dark mode */
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(0, 0, 0, 0.05);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/assets/moon-stars.svg);
+}
+/*----------*/
+
+/* light mode: ao aplicar light, toda esssa class sera aplicada */
+.light {
+    --text-color: black;
+    --bg-url: url(../assets/assets/br-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/assets/sun.svg);
+}
+/*----------*/
+
+body {
+    /*
+    background-image: url(./assets/assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+    
+    /*shorthand*/
+    /*agrupando background: color image repeat position/size */
+    background: var(--bg-url) no-repeat center/cover; /*propriedade shorthand*/   
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+#container {
+    width: 360px;
+    /*height: 712px; div container se ajustará de acordo com a adição de conteúdos.*/ 
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+/* profile */
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px; /*Aqui no CSS não se define altura, pois esta é definida de acordo com a adição de conteúdo.*/
+    
+}
+
+#profile p {
+    font-weight: 500; /*bold*/
+    font-size: 16px; /*altura padrao do browser*/
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+#switch {
+    position: relative;
+    width: 64px;
+
+    margin: 4px auto;
+}
+
+/* switch */
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 0;
+    border-radius: 50%;
+    background-image: var(--switch-bg-url);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+/*---------------------*/
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+/* estilizando o track */
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+
+    /* surface-color-dark-mode */
+    background: var(--surface-color);
+
+    /* stroke-color-dark-mode */
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    --webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+/* ------------------- */
+
+
+/*links (listas)*/
+ul {
+    list-style: none;
+    display: flex; /*ajuste flexível*/
+    flex-direction: column; /*em coluna*/
+    gap: 16px; /*espa;os entre elementos*/
+
+    padding: 24px o;
+}
+
+ul li  a {
+    display: flex; /*torna os elementos flex[iveis*/
+    justify-content: center; /*alinha elementos verticalmente*/
+
+    padding: 16px 24px;
+    align-items: center; /*alinha elementos horizontalmente*/
+
+    background: var(--surface-color); /*Read Green Blue Alfa(transparencia)*/
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(4px); /*aplica um embassado*/
+    -webkit-backdrop-filter: blur(4px); /*aplica um embassado*/
+
+    text-decoration: none;
+    font-weight: 500; /*acima de 400 já passa a ser bold*/
+
+    transition: background 0.3s; /*transição do background, poderia ser all (todos)*/
+}
+
+/*pseudo-selector (aplica formatação ao passar o mouse)*/
+ul li a:hover {
+    background: var(--surface-color-hover); /*Read Green Blue Alfa(transparencia)*/
+    border: 1px solid var(--text-color);
+}
+
+/* social links */
+#social-medias {
+    display: flex;
+    justify-content: center;
+    /*gap: 16px; gap precisa trabalhar em conjunto com o display: flex*/
+    
+    padding: 24px 0;
+
+    font-size: 24px;
+}
+
+/*alinhamento ao centro dos links social-medias*/
+#social-medias a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    transition: background 0.2s;
+    border-radius: 50%; /*Isso gera um circulo*/
+}
+
+#social-medias a:hover {
+    background: var(--highlight-color);
+}
+
+footer {
+    padding: 24px 0;
+    text-align: center; /* alinhamento de texto */
+    font-size: 14px;
+}
